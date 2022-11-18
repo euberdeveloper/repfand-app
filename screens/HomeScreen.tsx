@@ -1,5 +1,7 @@
-import { StyleSheet, Button, View, TouchableHighlight } from 'react-native';
+import { Button, View, TouchableHighlight } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+import screenStyle from '../styles/screen';
 
 const Btn = ({ title, onPress }: { title: string, onPress: () => void }) => {
     return (
@@ -20,16 +22,9 @@ const Btn = ({ title, onPress }: { title: string, onPress: () => void }) => {
 
 export const HomeScreen = ({ navigation }: NativeStackScreenProps<any>) => {
     return (
-        <View style={styles.container}>
+        <View style={screenStyle.container}>
             <Btn title="Generate" onPress={() => { navigation.navigate('Generate') }} />
-            <Btn title="Redeem" onPress={() => { navigation.navigate('Redeem')}} />
+            <Btn title="Redeem" onPress={() => { navigation.navigate('Redeem') }} />
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center'
-    },
-});
